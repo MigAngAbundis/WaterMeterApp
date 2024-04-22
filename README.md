@@ -1,11 +1,11 @@
-#Water meter number detection with YOLOv5 on Android
+# Water meter number detection with YOLOv5 on Android
 This project details the successful implementation of a mobile application for water meter measurement detection, leveraging
 the power of YOLOv5 in PyTorch. The project went through an initial phase of exploring options and models, including
 TensorFlow and other object detection models. However, the transition to YOLOv5 in PyTorch marked a turning point,
 providing more effective model conversion tools. This implementation will allow users to keep track of their water meter
 measurements efficiently, improving efficiency and accuracy in water resource management.
 
-###Transfer Learning with YOLOv5
+### Transfer Learning with YOLOv5
 To train the YOLOv5 model with a custom dataset, we proceed in a simple way, as
 It is mentioned in the PyTorch example repository android-demo-app/ObjectDetection (PyTorch, 2021). This is
 performed with a script that includes the Ultraytics YOLOv5 repository (Ultralytics, 2023). Required: the dataset,
@@ -24,7 +24,7 @@ Once the model is trained, it is necessary to export it to be able to use it in 
 
 
 
-###Exporting the model to Torchscritp format for using 
+### Exporting the model to Torchscritp format for using 
 To export the trained model, we proceed in a similar way to training. In this case, the
 path of the trained model and the export.py file, which is also included in the YOLOv5 repository. Without
 However, it is necessary to make a small modification to the export.py file, which consists of changing a line
@@ -55,7 +55,7 @@ To Test Run the Object Detection Android App, follow the steps below:
 1. Install anaconda
 2. Install cuda and Pytorch.
 
-##Android app for YOLOv5
+## Android app for YOLOv5
 The prerequisites for the Android app are:
 • PyTorch 1.10.0 and torchvision 0.11.1 (Optional).
 • Python 3.8 (Optional).
@@ -71,7 +71,7 @@ model as well as add test images in which we want to test the model.
 This requires copying the exported model to the assets folder and making the following changes:
 
 
-##Update the name of the model to use
+## Update the name of the model to use
 The application has 2 modes of use, uploaded images or in real time. You have to update the name in 2
 parts of the code.
 • To update the model used in the uploaded images, the change is made in the MainActiv- file.
@@ -93,7 +93,7 @@ MainActivity.assetFilePath
 , "best.torchscript.ptl"));
 
 
-##Update the model class description file
+## Update the model class description file
 Para un correcto funcionamiento de la aplicación, es necesario incluir un archivo .txt en el que se listen, separadas
 en lineas individuales, las clases del modelo entrenado. Por ejemplo, en este caso el archivo, de nombre
 “medidores.txt” para el dataset tiene el siguiente contenido:
@@ -116,7 +116,7 @@ getAssets()
 ));
 
 
-##Update the number of model output columns
+## Update the number of model output columns
 In the PrePostProcessor.java file, update the number of data output columns, which would be the
 number of classes in the dataset plus 5, which are the 4 corner positions of the detection rectangle and the
 class that was detected, in this case it would be 15 columns, 10 classes (the digits from 0 to 9) plus the 5 mentioned
@@ -125,7 +125,7 @@ as follows:
 private static int mOutputColumn = 15;
 
 
-##Add test images
+## Add test images
 To add images on which to test the model, it is necessary to add them to the assets folder of the
 project and add them to the mTestImages array, which contains the image names, defined in the file
 MainActivity.java. In this case, 3 images were added (meter1.jpg, meter2.jpg and meter3.jpg), leaving
@@ -138,7 +138,7 @@ aicook1.jpg", "aicook2.jpg",
 Once these changes have been made, it is now possible to use the Android application with the custom model.
 
 
-##Implementation of reading and regression line
+## Implementation of reading and regression line
 The implementation of a reading of the model was carried out, so that the
 model detection. To implement this feature, first the center of each of the
 detection rectangles, and were sorted in ascending order with the position value on the horizontal axis. Of
@@ -156,7 +156,7 @@ Unfortunately, due to time constraints, it was not possible to implement the alg
 eliminate those rectangles far from the line.
 
 
-##Acknowledgement
+## Acknowledgement
 José Chaparro
 Omar Escápita
 Luis Chacón
