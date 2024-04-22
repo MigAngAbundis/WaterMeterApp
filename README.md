@@ -157,11 +157,11 @@ eliminate those rectangles far from the line.
 
 
 ## Acknowledgement
-José Chaparro
-Omar Escápita
-Luis Chacón
-David Hernández
-Samuel Sánchez
-Denzel Muñoz
-Anahí Peinado
-Ramírez Graciela
+- José Chaparro
+- Omar Escápita
+- Luis Chacón
+- David Hernández
+- Samuel Sánchez
+- Denzel Muñoz
+- Anahí Peinado
+- Ramírez Graciela
